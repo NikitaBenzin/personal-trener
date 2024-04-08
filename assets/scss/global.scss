@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pirata+One&display=swap");
+
+$grey-dark: rgb(46, 53, 60);
+$white: rgb(255, 255, 255);
+$grey: rgb(89, 99, 106);
+$red: rgb(237, 4, 46);
+$black-light: rgb(52, 52, 52);
+
+@mixin font-style($font-size, $font-weight: 400, $color: $white) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  height: 44px;
+  width: 207px;
+  background-color: $red;
+  color: $white;
+  cursor: pointer;
+  border: none;
+
+  /* font-family: "Pirata One", system-ui; */
+  font-family: "Oswald", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: $white;
+    color: $black-light;
+  }
+
+  &:active {
+    background-color: $grey-dark;
+    color: $white;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  @include reset-list;
+}
+
+p {
+  @include font-style(14px);
+}
+
+nav {
+  a {
+    @include font-style(15px, 600);
+    text-decoration: none;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}
