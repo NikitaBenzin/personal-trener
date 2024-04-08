@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pirata+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 button {
   height: 44px;
   width: 207px;
@@ -73,10 +74,11 @@ header::before {
   background-image: url("../img/header-bg.png");
   background-repeat: no-repeat;
   background-position: center top;
+  background-size: contain;
   position: absolute;
   top: 0;
   z-index: -1;
-  height: 100%;
+  min-height: 922px;
   width: 100%;
 }
 
@@ -118,7 +120,7 @@ main {
   background-color: rgb(237, 4, 46);
   transform: rotate(45deg);
   top: -15px;
-  left: 5px;
+  left: 0;
 }
 .hero .hero-name h1::after {
   content: "";
@@ -128,7 +130,7 @@ main {
   background-color: rgb(237, 4, 46);
   transform: rotate(45deg);
   bottom: -5px;
-  right: 5px;
+  right: 0;
 }
 .hero .hero-name p {
   font-size: 24px;
@@ -138,7 +140,7 @@ main {
 .hero .hero-name .hero-nav {
   position: absolute;
   transform: rotate(-90deg);
-  left: 100%;
+  right: -230px;
 }
 .hero .hero-name .hero-nav .nav-list {
   display: flex;
@@ -164,6 +166,13 @@ main {
   cursor: pointer;
 }
 
+.expertise {
+  min-height: 645px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .expertise::before {
   content: "";
   position: absolute;
@@ -174,15 +183,6 @@ main {
   left: 0;
   -webkit-clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
           clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
-}
-.expertise > h2 {
-  padding-top: 87px;
-  color: rgb(255, 255, 255);
-  font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
 }
 .expertise .expertise-list {
   display: grid;
@@ -217,4 +217,154 @@ main {
   .expertise .expertise-list {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+.section-title {
+  display: block;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.section-title > h2 {
+  color: rgb(255, 255, 255);
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.section-title > h2::before {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: -155px;
+}
+.section-title > h2::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 5px);
+}
+
+.services {
+  min-height: 651.59px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.services::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  transform: translateY(-95px);
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("../img/services-bg.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.services .services-flex {
+  display: flex;
+  justify-content: end;
+  margin-top: 143px;
+  width: 100%;
+}
+.services .services-flex .services-info .services-info-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 415.15px;
+  min-height: 180px;
+}
+.services .services-flex .services-info .services-info-layout p {
+  color: rgb(255, 255, 255);
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+  text-align: left;
+}
+
+.testimonials {
+  min-height: 645px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.testimonials::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 645px;
+  z-index: -1;
+  left: 0;
+  -webkit-clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+          clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+  transform: translateY(-110px);
+  background-color: rgb(46, 53, 60);
+}
+.testimonials .testimonials-info {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.testimonials .testimonials-info::after {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-image: url("../img/Down-Arrow.svg");
+  background-repeat: no-repeat;
+  transform: rotate(-90deg);
+  background-position: center;
+  background-color: rgb(89, 99, 106);
+  border-radius: 100%;
+  top: 50%;
+  right: -150px;
+  cursor: pointer;
+}
+.testimonials .testimonials-info::after:hover {
+  background-color: red;
+}
+.testimonials .testimonials-info .quote {
+  color: rgb(255, 255, 255);
+  font-family: "Work Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  max-width: 839px;
+  min-height: 249px;
+  gap: 25px;
+  margin-top: 125px;
+}
+.testimonials .testimonials-info .quote q {
+  line-height: 25px;
+  max-width: 700px;
+}
+.testimonials .testimonials-info .quote cite {
+  font-style: normal;
+  font-weight: 700;
+}
+.testimonials .testimonials-info .testimonials-img {
+  position: absolute;
+  right: 0;
+  bottom: -50%;
+  right: -150px;
+  z-index: -1;
 }/*# sourceMappingURL=index.css.map */
